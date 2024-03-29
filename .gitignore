@@ -1,0 +1,11 @@
+my_test/
+tests/tmp/
+build/
+docs/build/
+.vscode/
+__pycache__/
+*.py[cod]
+.clang-format
+*.egg-info
+dist/
+.idea

@@ -1,0 +1,2 @@
+#!/bin/bash
+python3 $(dirname -- "${BASH_SOURCE[0]}")/slurmtop.py $1 $2 $3 $4 $5 $6 $7 | less -R
