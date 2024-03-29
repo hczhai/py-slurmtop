@@ -10,6 +10,7 @@ No dependencies
 ## Installation
 
 ```
+python3 -m pip install py-slurmtop --extra-index-url=https://hczhai.github.io/py-slurmtop/pypi/
 python3 -m pip install py-slurmtop
 ```
 
