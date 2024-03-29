@@ -28,4 +28,4 @@ python3 -m pip install py-slurmtop
 
 ## Screenshot
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/hczhai/py-slurmtop/blob/master/screenshot.png?raw=true)
