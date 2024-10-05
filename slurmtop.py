@@ -39,9 +39,9 @@ def parse_dict(x):
     g = []
     for xx in x.split(" "):
         if "=" in xx:
-            if xx.split("=")[0] == "TRES":
+            if xx.split("=")[0] in ["TRES", "ReqTRES"]:
                 vv = "=".join(xx.split("=")[1:]).replace(",", " ")
-                g.append((xx.split("=")[0], parse_dict(vv)))
+                g.append(("TRES", parse_dict(vv)))
             else:
                 g.append((xx.split("=")[0], xx.split("=")[1]))
         elif len(g) == 0:
@@ -177,10 +177,10 @@ class Job:
 
     @property
     def mem(self):
-        if job.TRES["mem"][-1] == "M":
-            return "%sG" % (int(job.TRES["mem"][:-1]) // 1024)
+        if self.TRES["mem"][-1] == "M":
+            return "%sG" % (int(self.TRES["mem"][:-1]) // 1024)
         else:
-            return job.TRES["mem"]
+            return self.TRES["mem"]
 
     @property
     def tag(self):
@@ -277,8 +277,8 @@ try:
                         node.color_name,
                         int(node.CPUAlloc),
                         int(node.ncpu),
-                        int(node.AllocMem) // 1000,
-                        int(node.RealMemory) // 1000,
+                        int(node.AllocMem) // 1024,
+                        int(node.RealMemory) // 1024,
                         "".join(node.cpu_occ),
                     ),
                     end=" ",
