@@ -269,7 +269,7 @@ try:
                 )
             )
             for node in sorted(
-                knodes, key=lambda x: [int(z) for z in x.name.split("-")[1:]]
+                knodes, key=lambda x: [int(z) if z.isdigit() else z for z in x.name.split("-")[1:]]
             ):
                 print(
                     "%15s  CPU: %3d/%3d  MEM: %4d/%4d GB [%s]"
